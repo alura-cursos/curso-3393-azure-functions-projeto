@@ -159,14 +159,22 @@ namespace Organico.Library.Data
         // Obtém os pedidos
         private List<Order> GetOrders()
         {
+            // 1. Comentar fluxo atual
             var orders = _orders.ToList();
             orders.Sort((order1, order2) => order2.Id.CompareTo(order1.Id));
             return orders;
+
+            // 2. Obter a URI da Azure Function dos pedidos
+
+            // 3. Realizar a requisição para a Azure Function dos pedidos
+
+            // 4. Tratar o resultado JSON dos pedidos
         }
 
         // Grava o pedido
         private void SaveOrder(Order order)
         {
+            // 1. Comentar fluxo atual
             var existingOrder = _orders.Where(o => o.Id == order.Id).SingleOrDefault();
             if (existingOrder != null)
             {
@@ -174,6 +182,10 @@ namespace Organico.Library.Data
             }
 
             _orders.Add(order);
+
+            // 2. Obter a URI da Azure Function do pedido
+
+            // 3. Serializar o pedido
         }
     }
 }
